@@ -1,10 +1,10 @@
 # @slidphi/warrant-ucan
 
-UCAN-signed Warrant delegation chains — AIP integration (Priority #1).
+Signed Warrant delegation chains: each hand-off from one agent to another carries a UCAN signature, so a spend permission can't be forged or widened along the way.
 
 ## Problem
 
-Warrants (`spl-narrow` spend permission slips, see `~/workspace/warrant-crossmint/warrant.py`)
+Plain Warrants (spend permission slips)
 are unsigned JSON. Anyone holding the file can present it, and nothing
 cryptographically binds a delegation hop to the parent agent that authorized it.
 
@@ -56,7 +56,7 @@ const r = await verifySignedWarrant(w, {
    some-but-not-all signed → fail closed (`warrant_partial_ucan`).
 3. **UCAN per hop**: signature, expiry, `iss` = parent DID, `aud` = child DID,
    `fct` facts deep-equal the hop body (tamper-evidence), numeric attenuation
-   vs parent caps, `warrant/spend:delegate` capability present. The AIP's
+   vs parent caps, `warrant/spend:delegate` capability present. The identity library's
    `validateUcan` additionally enforces `prf` chain linkage (parent.aud ==
    child.iss).
 
