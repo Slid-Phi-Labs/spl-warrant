@@ -1,7 +1,7 @@
 /**
  * @slidphi/warrant-ucan
  *
- * UCAN-signed Warrant delegation chains — AIP integration (Priority #1).
+ * UCAN-signed Warrant delegation chains.
  *
  * Warrants (see ~/workspace/warrant-crossmint/warrant.py) are "narrow" spend
  * permission slips with Biscuit-style offline attenuation:
